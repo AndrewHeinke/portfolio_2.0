@@ -1,30 +1,49 @@
 var express = require('express');
 var app = express();
-var router = express.Router();
-var path = __dirname + '/views/';
 
-router.use(function(req,res,next){
-  next();
-});
+//establish the port to listen on
+var PORT = process.env.PORT || 4444;
 
-router.get("/", function(req, res) {
-  res.sendFile(path + "index.html");
-});
+var morgan = require('morgan');
+var bodyParser = require('body-parser');
 
-router.get('/about', function(req, res) {
-  res.sendFile(path + "about.html");
-});
+// variables for sass middleware to compile to css
+var sassMiddleware = require('node-sass-middleware');
+var serveStatic = require('serve-static');
+var srcPath = __dirname + '/public/sass';
+var destPath = __dirname + '/public/css';
 
-router.get('/contact', function(req, res) {
-  res.sendFile(path + "contact.html");
-});
+// log requests to the console
+app.use(morgan('dev'));
 
-app.use("/", router);
+//Configure body parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.text());
+app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
-app.use("*",function(req,res) {
-  res.sendFile(path + "404.html");
-});
+// set up ejs for templating
+app.set('view engine', 'ejs');
 
-app.listen(3333,function() {
-  console.log("App listening on Port 3333");
+// auto compiles sass to css
+app.use('/css',
+  sassMiddleware({
+    src: srcPath,
+    dest: destPath,
+    debug: true,
+    outputStyle: 'compressed',
+  })
+);
+
+//serve static content from the public directory
+app.use('/',
+  serveStatic('./public', {})
+);
+
+// load routes and configured passport
+require('./app/routes.js')(app);
+
+//listen on the assigned port
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
 });
