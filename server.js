@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var favicon = require('serve-favicon');
 
 //establish the port to listen on
 var PORT = process.env.PORT || 4444;
@@ -24,6 +25,9 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 // set up ejs for templating
 app.set('view engine', 'ejs');
+
+// serve up favicon
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // auto compiles sass to css
 app.use('/css',

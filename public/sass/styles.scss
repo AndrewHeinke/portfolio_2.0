@@ -2,7 +2,10 @@
 @import 'modular-scale.scss';
 
 // ==================== Variables ====================
-$dark-gray: #292F36;
+$dark-gray: #0C120C;
+$light-gray: #e5e5e5;
+$primary-blue: #35A7FF;
+$white: #ffffff;
 
 $breakpoints: (
   small: 600px,
@@ -37,11 +40,19 @@ html {
   @include typi-base();
 }
 
+body {
+  font-family: 'Works Sans', sans-serif;
+}
+
 h1 {
  @include typi($h1-font-map);
+ font-family: 'Lora', serif;
+ font-weight: 700;
 }
 h2 {
  @include typi($h2-font-map);
+ font-family: 'Lora', serif;
+ font-weight: 700;
 }
 h3 {
  @include typi($h3-font-map);
@@ -51,17 +62,87 @@ p {
 }
 
 // ==================== Navigation ====================
+.container-fluid {
+  .navbar-header{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .navbar-collapse {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
 .navbar {
-  background: $dark-gray;
-  border-bottom: solid 1px white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: $white;
+  border-bottom: solid 1px #e5e5e5;
+  border-radius: 0px;
+  margin-bottom: 0px;
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+    .navbar-collapse {
+      padding: 0px;
+    }
+    .navbar-brand {
+      margin-left: 0px;
+    }
+  }
+  .navbar-brand {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 2px;
+    color: $dark-gray;
+    font-size: ms(2);
+    a {
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
   a {
-    color: white;
+    color: $dark-gray;
+    font-size: ms(1);
     &:hover {
       cursor: pointer;
       background: transparent;
-      color: green;
+      color: $primary-blue;
     }
   }
+}
+.navbar-nav {
+  margin: 0;
+  li {
+    border-right: 1px solid #e5e5e5;
+    &:last-child {
+      border-right: none;
+    }
+    &:hover {
+      border-right: 1px solid $primary-blue;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  a {
+    line-height: 50px;
+    padding: 15px 30px;
+    &:hover {
+      background: $primary-blue;
+      color: $white;
+      border-right: none;
+    }
+  }
+  }
+}
+.navbar-toggle {
+  background: $primary-blue;
+  height: 70px;
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 0px;
 }
 .navbar-toggle .icon-bar:nth-of-type(2) {
   top: 1px;
@@ -74,7 +155,7 @@ p {
 .navbar-toggle .icon-bar {
   position: relative;
   transition: all 400ms ease-in-out;
-  background: #ffffff;
+  background: $white;
 }
 
 .navbar-toggle.active .icon-bar:nth-of-type(1) {
@@ -93,5 +174,17 @@ p {
 
 // ==================== Main Banner ====================
 .jumbotron {
-  background-color: $dark-gray;
+  background: $white;
+}
+
+// ==================== Homepage ====================
+.img-slider-home {
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .col-md-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
