@@ -43,6 +43,7 @@ $p-font-map: (
 }
 html {
   @include typi-base();
+  overflow-y: scroll;
 }
 
 body {
@@ -124,7 +125,7 @@ p {
   border-left: none;
   border-right: none;
   background: $white;
-  border-bottom: solid 1px #e5e5e5;
+  border-bottom: solid 1px $light-gray;
   border-radius: 0px;
   margin-bottom: 0px;
   .container-fluid {
@@ -163,7 +164,7 @@ p {
 .navbar-nav {
   margin: 0;
   li {
-    border-right: 1px solid #e5e5e5;
+    border-right: 1px solid $light-gray;
     &:last-child {
       border-right: none;
     }
@@ -191,7 +192,7 @@ p {
         background: $white;
         outline: none;
         color: $dark-gray;
-        border-right: 1px solid #e5e5e5;
+        border-right: 1px solid $light-gray;
       }
     }
   }
@@ -235,10 +236,38 @@ p {
 // ==================== Main Banner ====================
 .jumbotron {
   background: $white;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+  }
+  #hello {
+    font-weight: 700;
+    color: $light-gray;
+    position: absolute;
+    top: -80px;
+    font-size: 9em;
+  }
+  .make-blue {
+    color: $primary-blue;
+  }
+  #tagline {
+    margin-top:25px;
+    padding-left: 50px;
+  }
+  .intro-text {
+    margin-right: 0px;
+  }
 }
 
 // ==================== Homepage ====================
+.bg-wrapper {
+  background-color: $light-gray;
+}
 .img-slider-home {
+  max-width: 1920px;
+  margin: 0 auto;
   .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
