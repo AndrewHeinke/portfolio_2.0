@@ -36,6 +36,11 @@ $p-font-map: (
 );
 
 // ==================== Base ====================
+* {
+  &:focus {
+    outline: none;
+  }
+}
 html {
   @include typi-base();
 }
@@ -48,20 +53,62 @@ h1 {
  @include typi($h1-font-map);
  font-family: 'Lora', serif;
  font-weight: 700;
+ color: $dark-gray;
 }
 h2 {
  @include typi($h2-font-map);
  font-family: 'Lora', serif;
  font-weight: 700;
+ color: $dark-gray;
 }
 h3 {
  @include typi($h3-font-map);
+ color: $dark-gray;
 }
 p {
   @include typi($p-font-map);
+  color: $dark-gray;
 }
 
 // ==================== Navigation ====================
+#logo {
+  overflow: hidden;
+  animation-name: fadeTop;
+  animation-duration: 2s;
+  height: 70px;
+  padding-top: 10px;
+  margin-left: 15px;
+  @media screen and (max-width: 768px) {
+    padding-top: 5px;
+  }
+  &:hover {
+    .logo-txt {
+      &:last-child {
+        display: inline-block;
+      }
+    }
+  }
+  .logo-txt {
+    &:first-child {
+      display: inline-block;
+      max-width: 50px;
+    }
+    max-width: 70px;
+    &:last-child {
+      display: hidden;
+      max-width: 250px;
+    }
+  }
+  img {
+    max-width: 100%;
+    height: 60px;
+  }
+  #logo-with-txt {
+    transition: all .3s;
+    padding-top: 10px;
+  }
+}
+
 .container-fluid {
   .navbar-header{
     margin-left: 0px;
@@ -137,6 +184,19 @@ p {
   }
   }
 }
+.nav {
+  li {
+    a {
+      &:focus {
+        background: $white;
+        outline: none;
+        color: $dark-gray;
+        border-right: 1px solid #e5e5e5;
+      }
+    }
+  }
+}
+
 .navbar-toggle {
   background: $primary-blue;
   height: 70px;
