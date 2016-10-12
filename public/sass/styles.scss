@@ -679,9 +679,16 @@ footer {
 
 // ==================== Resume Page ====================
 #resume-intro {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 30px;
+
+  .jumbotron {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 30px;
+    padding-top: 60px;
+    @media screen and (max-width: 480px) {
+      padding-top: 30px;
+    }
+  }
 }
 .wrapper {
   max-width: 1200px;
