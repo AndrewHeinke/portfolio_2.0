@@ -79,10 +79,12 @@ $p-font-map: (
 html {
   @include typi-base();
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Works Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -407,27 +409,80 @@ a {
     line-height: .75;
   }
 }
-
+.shadowed {
+	filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12,
+Color='#444')";
+	filter: url(#drop-shadow);
+	-webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.25));
+	filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.25));
+}
 .project {
+
   .project-title {
-    color: #ffffff;
-    font-weight: 300;
+    color: $dark-gray;
+    font-weight: 700;
+    margin-top: 0px;
   }
   .project-description {
-    color: #ffffff;
-    font-size: ms(1);
+    color: $dark-gray;
+    font-size: 2.5em;
+    @media screen and (max-width: 768px) {
+      font-size: 1.5em;
+    }
   }
   .elderly {
-    height: 600px;
-    background-color: #61E294;
+    margin-top: 30px;
+    background-color: $light-gray;
+    padding: 60px 30px;
+    @media screen and (max-width: 768px) {
+      padding: 15px 10px;
+    }
+  }
+  .line-up {
+    margin-top: 0px;
+    background-color: $light-gray;
+    padding: 60px 30px;
+    @media screen and (max-width: 768px) {
+      padding: 20px 10px;
+    }
   }
   button {
     border-radius: $brdr-radius;
-    border: 3px solid $white;
+    border: 3px solid $primary-blue;
     padding: 10px 30px;
-    color: $white;
+    color: $primary-blue;
     font-size: 1.5em;
     background: transparent;
+    &:hover {
+      background: $primary-blue;
+      color: $white;
+    }
+  }
+  .project-img {
+    position: absolute;
+    left: 60%;
+    top: -65px;
+    img {
+      max-width: 850px;
+    }
+    @media screen and (max-width: 768px) {
+      img {
+        display: none;
+      }
+    }
+  }
+  .project-img2 {
+    position: absolute;
+    left: -5%;
+    top: -20px;
+    img {
+      max-width: 750px;
+    }
+    @media screen and (max-width: 768px) {
+      img {
+        display: none;
+      }
+    }
   }
 }
 .jumbotron {

@@ -46,28 +46,41 @@
     </div>
     <div class="row">
       <div class="project">
-        <div class="elderly">
-          <div class="col-md-6 col-sm-12">
-            <h2 class="project-title">elderly</h2>
-            <p class="project-description">
-              A full stack web application designed to connect elderly people with local volunteers to help them with everyday tasks
-            </p>
-            <button type="button" class="project-button" name="button">View Project</button>
-          </div>
-        </div>
+          <div class="elderly col-md-12">
+            <div class="project-img">
+              <img class="shadowed" src="img/project-elderly.png" alt="Elderly by Andrew Heinke" />
+            </div>
+            <div class="col-md-7">
+              <h2 class="project-title">elderly</h2>
+              <p class="project-description">
+                A full stack web application designed to connect elderly people with local volunteers to help them with everyday tasks.
+              </p>
+              <a href="/portfolio">
+                <button type="button" class="project-button" name="button">View Project</button>
+              </a>
+            </div>
+
+            </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="project">
+          <div class="line-up col-md-12">
+            <div class="project-img2">
+              <img class="shadowed" src="img/project-lineup.png" alt="LineUp by Andrew Heinke" />
+            </div>
+            <div class="col-md-8 col-md-offset-4">
+              <h2 class="project-title">LineUp</h2>
+              <p class="project-description">
+                See how long the line is before you vote. This web app uses geofencing to verify crowdsourced voting on the length of lines.
+              </p>
+              <a href="/portfolio"><button type="button" class="project-button" name="button">View Project</button></a>
+            </div>
+            </div>
       </div>
     </div>
   </div>
-  <footer>
-    <div class="recent-work">
-      <p id="view-my">Want to</p>
-      <h2 class="text-center">Work With Me?</h2>
-      <div class="h-bar"></div>
-      <div class="email">
-        <a href="mailto:andrew.j.heinke@gmail.com">andrew.j.heinke<span class="trick">nospamplz</span>@gmail.com</a>
-      </div>
-    </div>
-  </footer>
+  <% include ../partials/footer %>
   <% include ../partials/body %>
   <script src="js/jquery.event.move.js"></script>
   <script src="js/jquery.twentytwenty.js"></script>
