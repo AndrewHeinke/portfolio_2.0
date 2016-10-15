@@ -434,8 +434,10 @@ Color='#444')";
     margin-top: 30px;
     background-color: $light-gray;
     padding: 60px 30px;
+    text-align: right;
     @media screen and (max-width: 768px) {
       padding: 15px 10px;
+      text-align: left;
     }
   }
   .line-up {
@@ -452,7 +454,7 @@ Color='#444')";
     padding: 10px 30px;
     color: $primary-blue;
     font-size: 1.5em;
-    background: transparent;
+    background: rgba(255,255,255,0.5);
     &:hover {
       background: $primary-blue;
       color: $white;
@@ -460,8 +462,9 @@ Color='#444')";
   }
   .project-img {
     position: absolute;
-    left: 60%;
+    left: 50%;
     top: -65px;
+    opacity: .75;
     img {
       max-width: 850px;
     }
