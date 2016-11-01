@@ -417,27 +417,100 @@ Color='#444')";
 	filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.25));
 }
 .project {
-
-  .project-title {
-    color: $dark-gray;
-    font-weight: 700;
-    margin-top: 0px;
-  }
-  .project-description {
-    color: $dark-gray;
-    font-size: 2.5em;
-    @media screen and (max-width: 768px) {
-      font-size: 1.5em;
+  a {
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+    .elderly-link {
+      &:hover {
+        text-decoration: none;
+        color: $white;
+      }
+      .project-copy {
+        &:hover {
+          text-decoration: none;
+          color: $white;
+        }
+      }
     }
   }
   .elderly {
+    padding: 0px;
     margin-top: 30px;
     background-color: $light-gray;
-    padding: 60px 30px;
-    text-align: right;
+    text-align: left;
     @media screen and (max-width: 768px) {
-      padding: 15px 10px;
+      padding: 0px;
       text-align: left;
+    }
+    .project-copy {
+      padding: 40px;
+      max-width: 960px;
+      margin: 0 auto;
+      visibility: hidden;
+      opacity: 0;
+      @media screen and (max-width: 768px) {
+        visibility: visible;
+        opacity: 1;
+        color: $white;
+        padding: 15px;
+        text-align: center;
+        padding-top: 40px;
+      }
+    }
+    .project-img {
+      @media screen and (max-width: 768px) {
+        background: linear-gradient(
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+      ), url(../img/project-elderly.jpg) no-repeat center center;
+      background-size:cover;
+      background-position:center; /* IE fix */
+      width: 100%;
+      padding-bottom: 30%;
+      }
+      &:hover {
+      background: linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ), url(../img/project-elderly.jpg) no-repeat center center;
+    background-size:cover;
+    background-position:center; /* IE fix */
+    width: 100%;
+    padding-bottom: 30%;
+        .project-copy {
+          visibility: visible;
+          opacity: 1;
+          color: $white;
+        }
+      }
+      .project-title {
+        font-weight: 700;
+        margin-top: 0px;
+        color: $white;
+      }
+      .project-description {
+        font-size: 2.5em;
+        @media screen and (max-width: 768px) {
+          font-size: 1.5em;
+        }
+      }
+      p {
+        color: $white;
+      }
+      button {
+        border-radius: $brdr-radius;
+        border: 3px solid $white;
+        padding: 10px 30px;
+        color: $white;
+        font-size: 1.5em;
+        background: rgba(0,0,0,0.35);
+        &:hover {
+          background: #69E398;
+          border: 3px solid #69E398;
+        }
+      }
     }
   }
   .line-up {
@@ -461,30 +534,20 @@ Color='#444')";
     }
   }
   .project-img {
-    position: absolute;
-    left: 65%;
-    top: -65px;
-    opacity: .75;
-    img {
-      max-width: 850px;
-    }
-    @media screen and (max-width: 768px) {
-      img {
-        display: none;
-      }
+    background: url(../img/project-elderly.jpg) no-repeat center center;
+    background-size:cover;
+    background-position:center; /* IE fix */
+    width: 100%;
+    padding-bottom: 30%;
+    &:hover {
+      cursor: pointer;
+      @include card(3);
     }
   }
   .project-img2 {
-    position: absolute;
-    left: -10%;
-    top: -20px;
+    display: inline-block;
     img {
-      max-width: 750px;
-    }
-    @media screen and (max-width: 768px) {
-      img {
-        display: none;
-      }
+      max-width: 100%;
     }
   }
 }
