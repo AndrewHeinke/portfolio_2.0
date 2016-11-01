@@ -442,7 +442,7 @@ Color='#444')";
   }
   .line-up {
     margin-top: 0px;
-    background-color: $light-gray;
+    background-color: $white;
     padding: 60px 30px;
     @media screen and (max-width: 768px) {
       padding: 20px 10px;
@@ -462,7 +462,7 @@ Color='#444')";
   }
   .project-img {
     position: absolute;
-    left: 50%;
+    left: 65%;
     top: -65px;
     opacity: .75;
     img {
@@ -476,7 +476,7 @@ Color='#444')";
   }
   .project-img2 {
     position: absolute;
-    left: -5%;
+    left: -10%;
     top: -20px;
     img {
       max-width: 750px;
